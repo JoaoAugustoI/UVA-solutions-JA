@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int PD[1000010];
+vector<int> vet;
+
+int main()
+{
+    int N,M;
+    while(cin>>N)
+    {
+        cin>>M;
+        //memset(PD,-1,sizeof PD);
+        for(int i = 0;i<M;i++)
+        {
+            int aux;
+            cin>>aux;
+            vet.push_back(aux);
+        }
+        PD[0] = 0;
+        for(int i = 1;i<=N;i++)
+        {
+				PD[i] = false;
+				for(int j = 0;j<vet.size();j++)
+				{
+					if(i>=vet[j] and !PD[i-vet[j]])
+					{
+						PD[i] = true;
+						j = vet.size();
+					}
+					
+				}
+			
+		}
+		//sort(vet.end(),vet.begin());
+        if(PD[N])
+        {
+            cout<<"Stan wins\n";
+        }
+        else
+            cout<<"Ollie wins\n";
+        vet.clear();
+    }
+}
