@@ -14,7 +14,7 @@ int main()
 	while(N--)
 	{
 		getline(cin,s);
-		strinstream st(s);
+		stringstream st(s);
 		int i = 0;
 		while(st>>vet[i++]);
 	}
