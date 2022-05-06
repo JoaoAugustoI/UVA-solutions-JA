@@ -24,7 +24,7 @@ void backtrack(string ordem)
     {
         flag2 = true;
         cout<<ordem[0];
-        //printf("%2d %d", ++lineCounter, row[0] + 1);
+        
         for (unsigned int j = 1; j < ordem.size(); j++)
             cout<<" "<<ordem[j];
         cout<<endl;
